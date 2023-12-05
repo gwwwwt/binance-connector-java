@@ -16,7 +16,7 @@ public class MarketFactory {
             return INSTANCE;
         }
 
-        SpotClient client = new SpotClientImpl(Config.API_KEY, Config.SECRET_KEY);
+        SpotClient client = new SpotClientImpl(Config.API_KEY, Config.SECRET_KEY, Config.URL);
 //        SpotClient client = new SpotClientImpl(Config.API_KEY, Config.SECRET_KEY, Config.URL);
         Proxy proxyConn = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", 7890));
         ProxyAuth proxy = new ProxyAuth(proxyConn, null);
