@@ -12,7 +12,7 @@ import java.util.concurrent.*;
 
 public class DataReceiver {
     private final static long MS_OF_MINUTE = 60 * 1000;
-    private final static long OFFSET_OF_PREV_MINUTE = 5 * 1000;
+    private final static long OFFSET_OF_PREV_MINUTE = 2 * 1000;
 
     private static final Logger logger = LoggerFactory.getLogger(DataReceiver.class);
 
@@ -40,7 +40,7 @@ public class DataReceiver {
                 + String.valueOf(today.getHour() * 60 + today.getMinute());
 
             Future<Result> estimateFuture2 = threadPool.submit(getTask(market_for_thread3, begin_of_next_minute - MS_OF_MINUTE,
-                begin_of_next_minute - OFFSET_OF_PREV_MINUTE, "55秒", false));
+                begin_of_next_minute - OFFSET_OF_PREV_MINUTE, "58秒", false));
 
             Future<Result> accurateFuture = threadPool.submit(getTask(market_for_thread1, begin_of_next_minute - MS_OF_MINUTE,
                 begin_of_next_minute, "准确值", true));
